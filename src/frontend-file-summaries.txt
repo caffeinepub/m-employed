@@ -1,0 +1,9 @@
+{
+  "frontend/src/components/layout/AppLayout.tsx": "Main application layout component with header navigation, authentication controls, and footer, now includes About link in desktop nav, mobile sheet menu, and footer alongside existing links.",
+  "frontend/src/pages/FounderAboutPage.tsx": "Founder page displaying Ayaan Ahmed Dewan's bio as Founder/CEO with a circular profile photo in the header, introduction, \"My Vision\" and \"Why Me\" sections, all content centralized in a founderContent object for easy updates.",
+  "frontend/src/App.tsx": "Main app component with TanStack Router configuration including all routes, now with new /about route registered alongside existing pages.",
+  "frontend/src/pages/AboutPlatformPage.tsx": "Public About the Platform page with centralized English copy in platformContent object, now featuring the updated tagline \"M Employed; Am Employed\" in the header section alongside mission, features grid with icons, core values, and CTA section.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with hero section displaying the tagline \"M Employed; Am Employed\" below the main headline, features grid, and CTA section for unauthenticated visitors.",
+  "frontend/src/hooks/useMemberCount.ts": "React Query hook that fetches the total member count from the backend actor using getTotalMembersCount() and caches it under the 'memberCount' query key.",
+  "frontend/src/pages/employer/EmployerDashboardPage.tsx": "Employer dashboard page displaying a member count stats card at the top, followed by the employer's job listings with edit and application management options."
+}

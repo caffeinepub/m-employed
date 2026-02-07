@@ -1,0 +1,78 @@
+{
+  "kind": "build_request",
+  "title": "Add member count (total registered users)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-23",
+      "text": "Add a backend query API that returns the total number of registered members as the count of entries in the `profiles` map.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-0",
+          "msg-1"
+        ],
+        "quotes": [
+          "How to find how many members we have got",
+          "Yes i need a member count"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes a new query method (e.g., `getMemberCount`) that returns the total number of stored user profiles.",
+        "The method counts members using the existing `profiles` in-memory map (no new storage structures or external services).",
+        "The method enforces authorization consistent with other sensitive reads (must not be callable by unauthenticated users).",
+        "Calling the method after creating N distinct accounts returns N."
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Add a React Query hook to fetch the member count from the backend actor and cache it under a stable query key.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Yes i need a member count"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new hook exists (in a non-immutable path) that calls the backend member-count method via the existing actor pattern.",
+        "The hook uses React Query (`useQuery`) and is enabled only when the actor is ready (consistent with existing hooks such as `useGetCallerUserProfile` and `useGetEmployerJobs`).",
+        "The query key is deterministic (e.g., `['memberCount']`) so it can be cached and refetched predictably."
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "text": "Display the total member count on the Employer Dashboard page (`frontend/src/pages/employer/EmployerDashboardPage.tsx`) in a small stats card near the top of the page with clear English labeling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Yes i need a member count"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Employer Dashboard renders a card/section labeled \"Total members\" (English text) and shows the numeric count returned by the backend.",
+        "While the member count is loading, the UI shows a skeleton/placeholder consistent with existing loading patterns.",
+        "If the member count cannot be loaded due to authorization or other errors, the page remains usable and shows a safe fallback (e.g., \"Total members: —\")."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single-actor Motoko canister; add the new method to `backend/main.mo`.",
+    "Do not edit any frontend files under `frontend/src/components/ui` or other immutable paths listed in SYSTEM_CONTEXT.",
+    "Use English for all user-facing text."
+  ],
+  "nonGoals": [
+    "Do not implement real-time updates; manual refresh/refetch via standard React Query behavior is sufficient.",
+    "Do not add external databases, analytics, or third-party tracking.",
+    "Do not build a full admin panel beyond displaying the member count."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
