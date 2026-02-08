@@ -72,6 +72,7 @@ export interface _SERVICE {
   'getApplicationsByJob' : ActorMethod<[JobId], Array<Application>>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
   'getCallerUserRole' : ActorMethod<[], UserRole>,
+  'getJob' : ActorMethod<[JobId], [] | [Job]>,
   'getJobsByEmployer' : ActorMethod<[Principal], Array<Job>>,
   'getMessagesByApplication' : ActorMethod<[ApplicationId], Array<Message>>,
   'getProfile' : ActorMethod<[Principal], UserProfile>,

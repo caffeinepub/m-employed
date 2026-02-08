@@ -274,6 +274,20 @@ actor {
     jobs.values().toArray().filter(func(job) { job.employer == employer });
   };
 
+  public query ({ caller }) func getJob(jobId : JobId) : async ?Job {
+    switch (jobs.get(jobId)) {
+      case (null) { null };
+      case (?job) {
+        // Return job if: (a) published OR (b) caller is employer or admin
+        if (job.published or AccessControl.isAdmin(accessControlState, caller) or job.employer == caller) {
+          ?job;
+        } else {
+          null;
+        };
+      };
+    };
+  };
+
   public query func searchJobs(searchTerm : Text) : async [Job] {
     // Public endpoint - anyone including guests can search published jobs
     jobs.values().toArray().filter(

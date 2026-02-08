@@ -1,37 +1,41 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Employer dashboard member count (frontend)",
+  "title": "Rename brand text from “Caffeine Jobs” to “M Employed” in frontend UI and document title",
   "requirements": [
     {
-      "id": "REQ-24",
-      "summary": "Create a React Query hook to fetch and cache the total member count from the backend actor under a stable query key.",
+      "id": "REQ-1",
+      "summary": "Replace all user-facing occurrences of the brand text “Caffeine Jobs” with “M Employed” across the frontend UI, including the Landing page CTA sentence.",
       "acceptanceCriteria": [
-        "A new hook exists (in a non-immutable path) that calls the backend member-count method via the existing actor pattern.",
-        "The hook uses React Query (`useQuery`) and is enabled only when the actor is ready (consistent with existing hooks such as `useGetCallerUserProfile` and `useGetEmployerJobs`).",
-        "The query key is deterministic (e.g., `['memberCount']`) so it can be cached and refetched predictably."
+        "The Landing page CTA line no longer contains “Caffeine Jobs” and uses “M Employed” instead.",
+        "No user-facing text in the frontend UI contains the substring “Caffeine Jobs” after the change (case-insensitive check recommended).",
+        "The replacement uses English user-facing text."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/hooks/useMemberCount.ts",
-          "operation": "create",
-          "description": "Add a new React Query hook (e.g., `useMemberCount`) that uses `useActor()` and `useQuery` to call the backend actor member-count capability (`getTotalMembersCount`) and caches results under a deterministic query key (e.g., `['memberCount']`). Ensure the query is enabled only when the actor is available and not fetching, and return loading state consistent with existing hook patterns."
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Update the CTA sentence copy to replace “Join Caffeine Jobs today and take the next step in your career journey” with the same sentence using “M Employed”."
+        },
+        {
+          "path": "frontend/src/pages/OnboardingPage.tsx",
+          "operation": "modify",
+          "description": "Update the onboarding header text “Welcome to Caffeine Jobs” to “Welcome to M Employed” to remove remaining user-facing brand references."
         }
       ]
     },
     {
-      "id": "REQ-25",
-      "summary": "Show the total member count in a small stats card near the top of the Employer Dashboard, with loading skeleton and safe fallback on error.",
+      "id": "REQ-2",
+      "summary": "Update the browser tab/page title to “M Employed” in the HTML entry point.",
       "acceptanceCriteria": [
-        "Employer Dashboard renders a card/section labeled \"Total members\" (English text) and shows the numeric count returned by the backend.",
-        "While the member count is loading, the UI shows a skeleton/placeholder consistent with existing loading patterns.",
-        "If the member count cannot be loaded due to authorization or other errors, the page remains usable and shows a safe fallback (e.g., \"Total members: —\")."
+        "frontend/index.html <title> includes “M Employed”.",
+        "The title change does not break app bootstrapping (root mount remains functional)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/employer/EmployerDashboardPage.tsx",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Integrate the new `useMemberCount` hook and render a compact stats Card near the top of the page labeled \"Total members\". Show a Skeleton placeholder while the query is loading, and on errors (including authorization failures) display a safe fallback value (e.g., '—') without blocking the rest of the dashboard UI."
+          "description": "Replace the existing <title> value “Employer–Employee Connection Website (Job Marketplace)” with an English title that includes “M Employed” (e.g., simply “M Employed”)."
         }
       ]
     }

@@ -1,196 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 17,
-  "summary": "Website to connect employers with employees (job marketplace/matching platform).",
-  "architectural_notes": [
-    "Founder/CEO About page content provided by user: Founder is Ayaan Ahmed Dewan (18, from Assam, India); mission/vision emphasizes equitable opportunities, reducing slow/biased job search via smart matching; platform connects employers with talent across tech and essential pros (drivers, carpenters, plumbers, housekeepers); includes sections 'My Vision' and 'Why Me' with provided copy.",
-    "Brand tagline to use in UI: \"M Employed; Am Employed\".",
-    "Founder/CEO About page should support displaying a founder photo (profile image) in the about section/page."
-  ],
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-implement-internet-identity-sign-in-and-an-onboarding-flow-that-lets-a-signed-in-user-choose-an-account-type-employer-or-candidate-and-stores-that-choice-in-the-backend-profile",
-      "title": "Implement Internet Identity sign-in and an onboarding flow that lets a signed-in user choose an account type: Employer or Candidate, and stores that choice in the backend profile.",
+      "id": "feature-replace-the-user-facing-brand-text-label-caffeine-jobs-with-m-employed-wherever-it-appears-in-the-frontend-including-the-landing-page-cta-sentence-currently-reading-join-caffeine-jobs-today-and-take-the-next-step-in-your-career-journey",
+      "title": "Replace the user-facing brand text label “Caffeine Jobs” with “M Employed” wherever it appears in the frontend, including the Landing page CTA sentence currently reading “Join Caffeine Jobs today and take the next step in your career journey”.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-profile-management-for-both-roles-employers-can-manage-company-details-candidates-can-manage-a-personal-profile-including-headline-skills-location-free-text-and-a-short-bio",
-      "title": "Create profile management for both roles: Employers can manage company details; Candidates can manage a personal profile including headline, skills, location (free-text), and a short bio.",
+      "id": "feature-update-the-browser-tab-page-title-in-frontend-index-html-to-use-the-product-name-m-employed-english-instead-of-the-generic-employer-employee-connection-website-job-marketplace",
+      "title": "Update the browser tab/page title in frontend/index.html to use the product name “M Employed” (English), instead of the generic “Employer–Employee Connection Website (Job Marketplace)”.",
       "reqIds": [
         "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-enable-employers-to-create-edit-publish-unpublish-and-delete-job-postings-with-structured-fields-title-description-location-employment-type-tags-skills",
-      "title": "Enable Employers to create, edit, publish/unpublish, and delete job postings with structured fields (title, description, location, employment type, tags/skills).",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-enable-candidates-to-browse-and-search-published-jobs-view-job-details-and-apply-to-a-job-with-a-short-message-and-optional-links-e-g-portfolio-url",
-      "title": "Enable Candidates to browse and search published jobs, view job details, and apply to a job with a short message and optional links (e.g., portfolio URL).",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-provide-an-application-management-workflow-employers-can-review-applications-per-job-and-update-application-status-e-g-submitted-reviewed-interview-rejected-hired-candidates-can-view-their-submitted-applications-and-statuses",
-      "title": "Provide an application management workflow: Employers can review applications per job and update application status (e.g., Submitted, Reviewed, Interview, Rejected, Hired); Candidates can view their submitted applications and statuses.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-simple-asynchronous-in-app-messaging-feature-tied-to-an-application-employers-and-the-candidate-who-applied-can-exchange-messages-in-a-thread-no-real-time-required-load-on-open-and-manual-refresh-is-acceptable",
-      "title": "Add a simple asynchronous in-app messaging feature tied to an application: Employers and the Candidate who applied can exchange messages in a thread (no real-time required; load-on-open and manual refresh is acceptable).",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-core-navigation-and-pages-landing-page-job-browse-job-detail-candidate-dashboard-applications-employer-dashboard-jobs-applications-profile-settings-ensure-route-protection-based-on-authentication-and-role",
-      "title": "Create core navigation and pages: Landing page, Job Browse, Job Detail, Candidate Dashboard (applications), Employer Dashboard (jobs + applications), Profile/Settings; ensure route protection based on authentication and role.",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-define-and-apply-a-cohesive-visual-theme-across-the-app-color-palette-typography-spacing-and-component-styling-suitable-for-a-professional-marketplace-avoid-a-blue-purple-dominant-palette",
-      "title": "Define and apply a cohesive visual theme across the app (color palette, typography, spacing, and component styling) suitable for a professional marketplace; avoid a blue/purple-dominant palette.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-generate-and-include-basic-branded-static-assets-and-render-them-in-the-ui-logo-and-a-simple-landing-hero-illustration-store-generated-images-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend",
-      "title": "Generate and include basic branded static assets and render them in the UI (logo and a simple landing hero illustration). Store generated images under frontend/public/assets/generated and reference them directly from the frontend.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-generate-a-new-minimalist-wordmark-logo-that-reads-m-employed-and-add-it-as-a-static-asset-under-frontend-public-assets-generated",
-      "title": "Generate a new minimalist wordmark logo that reads \"M EMPLOYED\" and add it as a static asset under frontend/public/assets/generated.",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-only-the-selected-header-logo-img-element-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-a-1-img-1-to-use-the-new-m-employed-logo-asset-and-appropriate-alt-text",
-      "title": "Update ONLY the selected header logo <img> element (XPath: /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/a[1]/img[1]) to use the new \"M EMPLOYED\" logo asset and appropriate alt text.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-new-public-founder-ceo-about-page-that-introduces-the-founder-ceo-using-english-user-facing-text-with-a-clean-professional-layout-e-g-headline-short-bio-values-mission-and-a-brief-why-i-built-m-employed-section-the-page-content-should-be-easy-to-update-later-e-g-defined-in-a-single-place-within-the-page-component",
-      "title": "Create a new public Founder/CEO About page that introduces the founder/CEO using English user-facing text, with a clean, professional layout (e.g., headline, short bio, values/mission, and a brief \"Why I built M EMPLOYED\" section). The page content should be easy to update later (e.g., defined in a single place within the page component).",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-routing-and-navigation-access-for-the-founder-ceo-about-page-by-registering-a-new-route-e-g-founder-in-the-tanstack-router-and-adding-a-visible-link-to-it-in-the-global-ui-navigation-and-or-footer-so-users-can-reach-it-from-anywhere",
-      "title": "Add routing and navigation access for the Founder/CEO About page by registering a new route (e.g., /founder) in the TanStack router and adding a visible link to it in the global UI navigation and/or footer so users can reach it from anywhere.",
-      "reqIds": [
-        "REQ-14"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-public-founder-page-content-frontend-src-pages-founderaboutpage-tsx-to-use-the-provided-founder-details-and-sections-in-english-keeping-the-content-defined-in-a-single-editable-object-within-the-page-component-file",
-      "title": "Update the public Founder page content (frontend/src/pages/FounderAboutPage.tsx) to use the provided founder details and sections in English, keeping the content defined in a single editable object within the page component file.",
-      "reqIds": [
-        "REQ-15"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-new-public-about-the-platform-page-component-that-explains-what-m-employed-is-who-it-is-for-employers-and-candidates-and-how-the-platform-works-at-a-high-level-all-user-facing-text-must-be-in-english-and-the-page-content-must-be-defined-in-a-single-easy-to-edit-object-within-the-page-component-file-similar-to-how-frontend-src-pages-founderaboutpage-tsx-centralizes-its-content",
-      "title": "Create a new public “About the Platform” page component that explains what M EMPLOYED is, who it is for (employers and candidates), and how the platform works at a high level. All user-facing text must be in English and the page content must be defined in a single, easy-to-edit object within the page component file (similar to how frontend/src/pages/FounderAboutPage.tsx centralizes its content).",
-      "reqIds": [
-        "REQ-16"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-routing-for-the-new-platform-about-page-at-a-top-level-route-use-about-in-the-tanstack-router-configuration",
-      "title": "Add routing for the new Platform About page at a top-level route (use /about) in the TanStack Router configuration.",
-      "reqIds": [
-        "REQ-17"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-visible-navigation-access-to-the-new-about-page-from-the-global-ui-so-users-can-reach-it-from-anywhere-add-a-link-in-the-header-navigation-and-in-the-footer-link-group",
-      "title": "Add visible navigation access to the new /about page from the global UI so users can reach it from anywhere (add a link in the header navigation and in the footer link group).",
-      "reqIds": [
-        "REQ-18"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-exact-branding-tagline-text-m-employed-am-employed-to-the-public-landing-page-hero-section-frontend-src-pages-landingpage-tsx-displayed-near-the-main-hero-headline-so-it-is-clearly-visible-to-first-time-visitors",
-      "title": "Add the exact branding tagline text \"M Employed; Am Employed\" to the public landing page hero section (frontend/src/pages/LandingPage.tsx), displayed near the main hero headline so it is clearly visible to first-time visitors.",
-      "reqIds": [
-        "REQ-19"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-about-platform-page-header-tagline-to-use-the-exact-text-m-employed-am-employed-by-changing-the-platformcontent-tagline-value-in-frontend-src-pages-aboutplatformpage-tsx",
-      "title": "Update the About Platform page header tagline to use the exact text \"M Employed; Am Employed\" by changing the platformContent.tagline value in frontend/src/pages/AboutPlatformPage.tsx.",
-      "reqIds": [
-        "REQ-20"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-the-user-uploaded-photo-20240102-161111-jpg-as-a-static-image-asset-under-frontend-public-assets-generated-by-creating-an-optimized-square-headshot-version-suitable-for-an-about-founder-profile-image",
-      "title": "Add the user-uploaded photo (20240102_161111.jpg) as a static image asset under frontend/public/assets/generated by creating an optimized, square headshot version suitable for an About/Founder profile image.",
-      "reqIds": [
-        "REQ-21"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-public-founder-about-page-frontend-src-pages-founderaboutpage-tsx-to-display-the-generated-founder-photo-prominently-in-the-header-area-near-the-founder-name-role-with-appropriate-styling-e-g-circular-or-rounded-portrait-consistent-spacing-and-english-alt-text",
-      "title": "Update the public Founder About page (frontend/src/pages/FounderAboutPage.tsx) to display the generated founder photo prominently in the header area (near the founder name/role) with appropriate styling (e.g., circular or rounded portrait, consistent spacing) and English alt text.",
-      "reqIds": [
-        "REQ-22"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-react-query-hook-to-fetch-the-member-count-from-the-backend-actor-and-cache-it-under-a-stable-query-key",
-      "title": "Add a React Query hook to fetch the member count from the backend actor and cache it under a stable query key.",
-      "reqIds": [
-        "REQ-24"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-display-the-total-member-count-on-the-employer-dashboard-page-frontend-src-pages-employer-employerdashboardpage-tsx-in-a-small-stats-card-near-the-top-of-the-page-with-clear-english-labeling",
-      "title": "Display the total member count on the Employer Dashboard page (`frontend/src/pages/employer/EmployerDashboardPage.tsx`) in a small stats card near the top of the page with clear English labeling.",
-      "reqIds": [
-        "REQ-25"
       ],
       "version": 1
     }
@@ -198,65 +26,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Build a website that connects employers to employees (job marketplace/matching platform).",
+      "summary": "Rename/replace site text/label from \"Caffeine jobs\" to \"M Employed\"",
       "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Backend data model and APIs: implement stable, persistent storage for users/profiles, job postings, applications, and messages, with authorization checks for every mutation and any sensitive read.",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Add gig-style one-time tasks: allow employers to post one-time tasks (e.g., barber, carpenter, plumber, housekeeper) with categories and filtering/browsing for quick gigs.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Add an About page as a new top-level page/route (e.g., /about) linked in navigation/footer, containing provided platform description text.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-12",
-      "summary": "Add a Founder/CEO About section/page introducing the founder/CEO (bio content to be provided) as part of the platform’s content/pages.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-13",
-      "summary": "Add the tagline \"M Employed; Am Employed\" to the relevant public-facing page (e.g., landing hero or the newly created page) as user-facing branding text.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-14",
-      "summary": "Add the founder/CEO photo to the public About section/page (display a profile image in the Founder/CEO About page/about section).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-15",
-      "summary": "Add a “member count” feature: provide a backend method to return total registered users (e.g., count of profiles) and display it in the admin/employer dashboard UI.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-16",
-      "summary": "Add a backend query API that returns the total number of registered members as the count of entries in the `profiles` map.",
-      "reqIds": [
-        "REQ-23"
-      ],
       "status": "pending"
     }
   ],
-  "gameProjectType": "none",
-  "projectName": "M EMPLOYED",
+  "projectName": "Rename “Caffeine Jobs” brand text to “M Employed”",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

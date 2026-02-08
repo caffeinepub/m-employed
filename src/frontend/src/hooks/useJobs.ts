@@ -37,8 +37,7 @@ export function useJob(jobId: JobId | null) {
     queryKey: ['job', jobId?.toString()],
     queryFn: async () => {
       if (!actor || !jobId) return null;
-      const jobs = await actor.getPublishedJobs();
-      return jobs.find(j => j.id.toString() === jobId.toString()) || null;
+      return actor.getJob(jobId);
     },
     enabled: !!actor && !actorFetching && !!jobId,
   });
@@ -120,10 +119,11 @@ export function useUpdateJob() {
         data.employmentType,
         data.skills
       );
+      return data.jobId;
     },
-    onSuccess: () => {
+    onSuccess: (jobId) => {
       queryClient.invalidateQueries({ queryKey: ['employerJobs'] });
-      queryClient.invalidateQueries({ queryKey: ['job'] });
+      queryClient.invalidateQueries({ queryKey: ['job', jobId.toString()] });
     },
   });
 }
@@ -136,10 +136,11 @@ export function useToggleJobPublication() {
     mutationFn: async ({ jobId, published }: { jobId: JobId; published: boolean }) => {
       if (!actor) throw new Error('Actor not available');
       await actor.toggleJobPublication(jobId, published);
+      return jobId;
     },
-    onSuccess: () => {
+    onSuccess: (jobId) => {
       queryClient.invalidateQueries({ queryKey: ['employerJobs'] });
-      queryClient.invalidateQueries({ queryKey: ['job'] });
+      queryClient.invalidateQueries({ queryKey: ['job', jobId.toString()] });
       queryClient.invalidateQueries({ queryKey: ['publishedJobs'] });
     },
   });

@@ -3,7 +3,7 @@ import { useInternetIdentity } from '@/hooks/useInternetIdentity';
 import { useGetCallerUserProfile } from '@/hooks/useCurrentUser';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Briefcase, Users, MessageSquare, Shield, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, MessageSquare, Shield, ArrowRight, Download } from 'lucide-react';
 import { useEffect } from 'react';
 
 export default function LandingPage() {
@@ -143,6 +143,51 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Logo Download Section */}
+      <section className="py-12 bg-muted/20">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                  <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <Download className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <h3 className="font-semibold text-lg">Download Our Logo</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Need our logo for promotional materials? Download high-resolution versions below.
+                    </p>
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <a 
+                        href="/assets/generated/m-employed-logo-download-transparent.dim_2048x512.png"
+                        download="m-employed-logo-transparent.png"
+                        className="inline-flex items-center gap-2"
+                      >
+                        <Button variant="outline" size="sm" className="gap-2">
+                          <Download className="h-4 w-4" />
+                          Transparent PNG
+                        </Button>
+                      </a>
+                      <a 
+                        href="/assets/generated/m-employed-logo-download-white.dim_2048x512.png"
+                        download="m-employed-logo-white.png"
+                        className="inline-flex items-center gap-2"
+                      >
+                        <Button variant="outline" size="sm" className="gap-2">
+                          <Download className="h-4 w-4" />
+                          White Background PNG
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
@@ -151,7 +196,7 @@ export default function LandingPage() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Join Caffeine Jobs today and take the next step in your career journey
+              Join M Employed today and take the next step in your career journey
             </p>
             <Button 
               size="lg" 

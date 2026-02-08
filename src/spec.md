@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Allow authorized users to view the total number of registered members.
+**Goal:** Update user-facing branding text and the browser tab title to use “M Employed” instead of “Caffeine Jobs” and the current generic title.
 
 **Planned changes:**
-- Add a new backend query method (e.g., `getMemberCount`) that returns the total number of registered users by counting entries in the existing `profiles` in-memory map, with authentication required.
-- Add a React Query hook to fetch and cache the member count from the backend actor under a stable query key (e.g., `['memberCount']`) and only run when the actor is ready.
-- Update the Employer Dashboard page to show a small stats card near the top labeled "Total members" with loading placeholder behavior and a safe fallback on errors.
+- Replace all user-facing frontend text occurrences of “Caffeine Jobs” with “M Employed”, including the Landing page CTA sentence.
+- Update `frontend/index.html` page `<title>` to include “M Employed” instead of “Employer–Employee Connection Website (Job Marketplace)”.
 
-**User-visible outcome:** The Employer Dashboard displays a "Total members" stat showing the current total registered user count, with appropriate loading and error-safe behavior.
+**User-visible outcome:** The UI and browser tab consistently display “M Employed” as the product/brand name, and the Landing page CTA no longer mentions “Caffeine Jobs”.

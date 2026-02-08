@@ -1,38 +1,51 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T19:05:03.816Z",
-  "summary": "REQ-24 and REQ-25 appear implemented (new React Query hook with stable key and Employer Dashboard stats card with loading skeleton and safe fallback). REQ-23 is only partially met because the new backend member-count query is not authorized (it is explicitly implemented as requiring no authorization). The diff also introduces unrelated “About” pages/routes/nav changes that were not requested.",
+  "generatedAt": "2026-02-08T06:16:30.463Z",
+  "summary": "REQ-2 (page title) is implemented in frontend/index.html. REQ-1 (replace all user-facing occurrences of “Caffeine Jobs” with “M Employed”, including the specific Landing page CTA sentence) cannot be fully verified from the provided truncated diffs; multiple unrelated new pages/features appear to have been added beyond the requested branding-text update.",
   "missing_requirements": [
     {
-      "id": "REQ-23",
-      "requirement": "Backend member-count query must enforce authorization consistent with other sensitive reads (must not be callable by unauthenticated users).",
-      "reason": "The new method is implemented as a public query with no caller context or permission checks, and is commented as requiring no authorization.",
+      "id": "REQ-1",
+      "requirement": "Replace the user-facing brand text label “Caffeine Jobs” with “M Employed” wherever it appears in the frontend, including the Landing page CTA sentence “Join Caffeine Jobs today and take the next step in your career journey”.",
+      "reason": "The LandingPage.tsx diff is truncated and does not show the CTA sentence; there is no direct evidence in the shown content that the specific CTA line was updated, nor that all frontend occurrences of “Caffeine Jobs” were removed.",
       "evidence": [
-        "backend/main.mo"
+        "frontend/src/pages/LandingPage.tsx (truncated)"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Added/modified “About” pages, route, and navigation/footer links (About link in layout, new /about route, Founder/About pages, tagline updates on landing/about pages).",
-      "reason": "Not requested by REQ-23/24/25 and outside the stated non-goals (only member count feature requested).",
+      "description": "Added downloadable logo links / logo download section in the layout/footer.",
+      "reason": "BuildRequest explicitly limits scope to text/branding updates and lists changing logos or generated image assets as non-goals; adding download links/sections is a new feature beyond requested text replacement.",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "frontend/src/components/layout/AppLayout.tsx",
-        "frontend/src/App.tsx",
-        "frontend/src/pages/FounderAboutPage.tsx",
-        "frontend/src/pages/AboutPlatformPage.tsx",
-        "frontend/src/pages/LandingPage.tsx"
+        "frontend-file-summaries.txt (frontend/src/components/layout/AppLayout.tsx)"
+      ]
+    },
+    {
+      "description": "Introduced new public pages and routes (e.g., /about, Founder/About pages, platform about page) with substantial new content.",
+      "reason": "Not requested; BuildRequest is specifically about renaming brand text and updating the browser title, and states non-goal of adding new features beyond text/branding updates.",
+      "evidence": [
+        "frontend-file-summaries.txt (frontend/src/App.tsx)",
+        "frontend-file-summaries.txt (frontend/src/pages/FounderAboutPage.tsx)",
+        "frontend-file-summaries.txt (frontend/src/pages/AboutPlatformPage.tsx)"
+      ]
+    },
+    {
+      "description": "Added member count feature (new hook, dashboard stats card, backend call usage) and expanded job operation hooks with new caching/invalidation behavior.",
+      "reason": "Not requested; these are functional feature additions unrelated to renaming brand text or updating the HTML title.",
+      "evidence": [
+        "frontend-file-summaries.txt (frontend/src/hooks/useMemberCount.ts)",
+        "frontend-file-summaries.txt (frontend/src/pages/employer/EmployerDashboardPage.tsx)",
+        "frontend-file-summaries.txt (frontend/src/hooks/useJobs.ts)"
       ]
     }
   ],
-  "confidence": 0.78,
+  "confidence": 0.64,
   "changed_files": [
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/src/hooks/useMemberCount.ts",
-    "frontend/src/pages/employer/EmployerDashboardPage.tsx",
+    "frontend/index.html",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/OnboardingPage.tsx",
     "project_state.json"
   ]
 }

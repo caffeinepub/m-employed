@@ -86,6 +86,7 @@ export const idlService = IDL.Service({
   'getApplicationsByJob' : IDL.Func([JobId], [IDL.Vec(Application)], ['query']),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
   'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+  'getJob' : IDL.Func([JobId], [IDL.Opt(Job)], ['query']),
   'getJobsByEmployer' : IDL.Func([IDL.Principal], [IDL.Vec(Job)], ['query']),
   'getMessagesByApplication' : IDL.Func(
       [ApplicationId],
@@ -207,6 +208,7 @@ export const idlFactory = ({ IDL }) => {
       ),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
     'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+    'getJob' : IDL.Func([JobId], [IDL.Opt(Job)], ['query']),
     'getJobsByEmployer' : IDL.Func([IDL.Principal], [IDL.Vec(Job)], ['query']),
     'getMessagesByApplication' : IDL.Func(
         [ApplicationId],

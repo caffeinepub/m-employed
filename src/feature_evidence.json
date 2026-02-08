@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-react-query-hook-to-fetch-the-member-count-from-the-backend-actor-and-cache-it-under-a-stable-query-key",
-      "featureTitle": "Add a React Query hook to fetch the member count from the backend actor and cache it under a stable query key.",
+      "featureId": "feature-replace-the-user-facing-brand-text-label-caffeine-jobs-with-m-employed-wherever-it-appears-in-the-frontend-including-the-landing-page-cta-sentence-currently-reading-join-caffeine-jobs-today-and-take-the-next-step-in-your-career-journey",
+      "featureTitle": "Replace the user-facing brand text label “Caffeine Jobs” with “M Employed” wherever it appears in the frontend, including the Landing page CTA sentence currently reading “Join Caffeine Jobs today and take the next step in your career journey”.",
       "files": [
-        "frontend/src/hooks/useMemberCount.ts"
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/pages/OnboardingPage.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -16,15 +17,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-24"
+        "REQ-1"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-display-the-total-member-count-on-the-employer-dashboard-page-frontend-src-pages-employer-employerdashboardpage-tsx-in-a-small-stats-card-near-the-top-of-the-page-with-clear-english-labeling",
-      "featureTitle": "Display the total member count on the Employer Dashboard page (`frontend/src/pages/employer/EmployerDashboardPage.tsx`) in a small stats card near the top of the page with clear English labeling.",
+      "featureId": "feature-update-the-browser-tab-page-title-in-frontend-index-html-to-use-the-product-name-m-employed-english-instead-of-the-generic-employer-employee-connection-website-job-marketplace",
+      "featureTitle": "Update the browser tab/page title in frontend/index.html to use the product name “M Employed” (English), instead of the generic “Employer–Employee Connection Website (Job Marketplace)”.",
       "files": [
-        "frontend/src/pages/employer/EmployerDashboardPage.tsx"
+        "frontend/index.html"
       ],
       "components": [
         "authorization@4.0.0",
@@ -35,7 +36,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-25"
+        "REQ-2"
       ],
       "confidence": "high"
     }

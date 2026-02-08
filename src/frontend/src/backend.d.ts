@@ -71,6 +71,7 @@ export interface backendInterface {
     getApplicationsByJob(jobId: JobId): Promise<Array<Application>>;
     getCallerUserProfile(): Promise<UserProfile | null>;
     getCallerUserRole(): Promise<UserRole>;
+    getJob(jobId: JobId): Promise<Job | null>;
     getJobsByEmployer(employer: Principal): Promise<Array<Job>>;
     getMessagesByApplication(applicationId: ApplicationId): Promise<Array<Message>>;
     getProfile(user: Principal): Promise<UserProfile>;

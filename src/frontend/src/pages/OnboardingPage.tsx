@@ -55,7 +55,7 @@ export default function OnboardingPage() {
     <div className="container py-20">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">Welcome to Caffeine Jobs</h1>
+          <h1 className="text-3xl font-bold mb-2">Welcome to M Employed</h1>
           <p className="text-muted-foreground">Let's set up your account</p>
         </div>
 

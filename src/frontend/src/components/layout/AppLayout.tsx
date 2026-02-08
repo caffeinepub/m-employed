@@ -2,7 +2,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import { useInternetIdentity } from '@/hooks/useInternetIdentity';
 import { useGetCallerUserProfile } from '@/hooks/useCurrentUser';
 import { Button } from '@/components/ui/button';
-import { Briefcase, User, Settings, LogOut, LogIn, Menu } from 'lucide-react';
+import { Briefcase, User, Settings, LogOut, LogIn, Menu, Download } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
@@ -166,33 +166,61 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-muted/30 py-8 mt-auto">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2026. Built with ❤️ using{' '}
-              <a 
-                href="https://caffeine.ai" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-medium hover:text-primary transition-colors"
-              >
-                caffeine.ai
-              </a>
-            </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <Link to="/jobs" className="hover:text-primary transition-colors">
-                Browse Jobs
-              </Link>
-              <Link to="/about" className="hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link to="/founder" className="hover:text-primary transition-colors">
-                Founder
-              </Link>
-              {isAuthenticated && (
-                <Link to="/profile" className="hover:text-primary transition-colors">
-                  Profile
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <p className="text-sm text-muted-foreground text-center md:text-left">
+                © 2026. Built with ❤️ using{' '}
+                <a 
+                  href="https://caffeine.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-medium hover:text-primary transition-colors"
+                >
+                  caffeine.ai
+                </a>
+              </p>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <Link to="/jobs" className="hover:text-primary transition-colors">
+                  Browse Jobs
                 </Link>
-              )}
+                <Link to="/about" className="hover:text-primary transition-colors">
+                  About
+                </Link>
+                <Link to="/founder" className="hover:text-primary transition-colors">
+                  Founder
+                </Link>
+                {isAuthenticated && (
+                  <Link to="/profile" className="hover:text-primary transition-colors">
+                    Profile
+                  </Link>
+                )}
+              </div>
+            </div>
+            
+            <div className="border-t pt-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <span className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  Download Logo:
+                </span>
+                <div className="flex flex-wrap gap-3">
+                  <a 
+                    href="/assets/generated/m-employed-logo-download-transparent.dim_2048x512.png"
+                    download="m-employed-logo-transparent.png"
+                    className="text-sm text-primary hover:underline font-medium"
+                  >
+                    Transparent PNG
+                  </a>
+                  <span className="text-muted-foreground">•</span>
+                  <a 
+                    href="/assets/generated/m-employed-logo-download-white.dim_2048x512.png"
+                    download="m-employed-logo-white.png"
+                    className="text-sm text-primary hover:underline font-medium"
+                  >
+                    White Background PNG
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
